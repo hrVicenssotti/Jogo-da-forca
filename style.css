@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+.cabecalho h1 {
+    text-align: center;
+    margin: 0;
+    padding: 1vw;
+}
+#telaJogo {
+    border: 1px solid;
+    margin-left: calc(50% - 500px)
+}
