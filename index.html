@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jogo da forca</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="cabecalho"> 
-        <h1>Jogo da forca</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>Jogo da forca</h1>
     </header>
     <main>
-        <section>
-            <canvas id="telaJogo" width="1000" height="400"></canvas>
-        </section>
-        <section class="sectionButtons">
-            <div id="buttonsLetras" class="buttons">
-            </div>
-        </section>
+      <section>
+        <canvas id="telaJogo" width="1000" height="400"></canvas>
+      </section>
+      <section class="sectionButtons">
+        <div id="buttonsLetras" class="buttons"></div>
+      </section>
     </main>
+    <script>
+      function criarBotao(letra) {
+        const botao = document.createElement("button");
+        botao.value = letra;
+        botao.innerHTML = letra;
+        botao.id = `Letra_${letra}`
+        return botao;
+      }
+      function criarBotoes() {
+        const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (let i in letras) {
+          document
+            .querySelector("#buttonsLetras")
+            .appendChild(criarBotao(letras[i]));
+        }
+      }
+      criarBotoes();
+    </script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
