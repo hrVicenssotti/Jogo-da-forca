@@ -2,14 +2,16 @@
     --background-button: #06c576;
     --background-button-second: #08995d;
     --border-tela: rgba(100, 98, 98, 0.753);
-    --font-arimo: font-family: 'Arimo', sans-serif;
+    --font-arimo: font-family: 'Arimo', arial;
+}
+* {
+    font-family: var(--font-arimo);
 }
 body {
     margin: 0;
     padding: 2vh;
     box-sizing: border-box;
     height: 100vh;
-    font-family: var(--font-arimo);
 }
 .cabecalho h1 {
     user-select: none;
@@ -51,8 +53,8 @@ body {
 }
 .optionsButton button {
     user-select: none;
-    width: 8vw;
-    height: 2vw;
+    width: 10vw;
+    height: 2.5vw;
     font-size: 1vw;
     font-weight: 700;
     border: 0;
