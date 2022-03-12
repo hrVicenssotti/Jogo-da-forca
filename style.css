@@ -87,7 +87,7 @@ body {
         width: 95vw;
     }
     .sectionButtons {
-        margin: 5vw 0;
+        margin: 10vw 0;
     }
     .buttons {
         grid-template-columns: repeat(7, 1fr);
