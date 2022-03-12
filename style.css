@@ -46,3 +46,7 @@ body {
 .buttons button:active {
     transform: scale(0.97);
 }
+.buttons .active {
+    background-color: rgb(9, 146, 105);
+    transform: scale(0.97);
+}
