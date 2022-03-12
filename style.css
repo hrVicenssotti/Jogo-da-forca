@@ -6,6 +6,8 @@
 }
 body {
     margin: 0;
+    padding: 2vh;
+    box-sizing: border-box;
     height: 100vh;
     font-family: var(--font-arimo);
 }
