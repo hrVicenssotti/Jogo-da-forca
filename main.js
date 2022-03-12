@@ -1,6 +1,6 @@
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
-const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZÇÃ";
 criarBotoes();
 entradaUser();
 const pincel = new Pinceis();
