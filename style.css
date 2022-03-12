@@ -94,13 +94,13 @@ body {
         gap: 3vw;
     }
     .buttons button {
-        width: 8vw;
-        height: 8vw;
-        font-size: 2vw;
+        width: 9vw;
+        height: 9vw;
+        font-size: 3vw;
     }
     .optionsButton button {
-        width: 20vw;
+        width: 30vw;
         height: 6.5vw;
-        font-size: 2vw;
+        font-size: 3vw;
     }
 }
