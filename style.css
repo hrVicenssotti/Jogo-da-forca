@@ -13,59 +13,41 @@ body {
   box-sizing: border-box;
   height: 100vh;
 }
+#telaJogo {
+  box-shadow: 0px 0px 0.4vw 0.05vw var(--border-tela);
+}
 .sectionTela {
   display: flex;
   justify-content: center;
 }
-#telaJogo {
-  box-shadow: 0px 0px 0.4vw 0.05vw var(--border-tela);
-}
 .sectionButtons {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.sectionButtons .novaPalavra {
+  width: 10vw;
+  height: 2.5vw;
+  background-color: var(--background-button-second);
+}
+.sectionButtons .novaPalavra:hover {
+  background-color: rgb(4, 170, 120);
 }
 .buttons {
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
-  margin-top: 2vw;
+  grid-template-columns: repeat(14, 3.5vw);
+  margin: 2vw 0;
   gap: 1vw;
 }
 .buttons button {
-  user-select: none;
   width: 3.5vw;
   height: 3.5vw;
-  font-size: 1vw;
-  font-weight: 700;
-  border: 0;
   background-color: var(--background-button);
-  box-shadow: 0px 0px 0.3vw 0.01vw var(--border-tela);
-  box-sizing: border-box;
-}
-.optionsButton {
-  display: flex;
-  justify-content: center;
-  margin-top: 2vw;
-  gap: 1vw;
-}
-.optionsButton button {
-  user-select: none;
-  width: 10vw;
-  height: 2.5vw;
-  font-size: 1vw;
-  font-weight: 700;
-  border: 0;
-  background-color: var(--background-button-second);
-  box-shadow: 0px 0px 0.3vw 0.01vw var(--border-tela);
-  box-sizing: border-box;
 }
 .buttons button:hover {
   background-color: rgb(9, 146, 105);
 }
-.optionsButton button:hover {
-  background-color: rgb(4, 170, 120);
-}
-.buttons button:active,
-.optionsButton button:hover {
+.buttons button:active, .sectionButtons .novaPalavra:hover {
   transform: scale(0.97);
 }
 .buttons .active {
@@ -77,10 +59,44 @@ body {
   box-shadow: 0px 0px 0.3vw 0.01vw red;
   background-color: cadetblue;
 }
-.buttons .press:hover,
-.press:active {
+.buttons .press:hover, .press:active {
   background-color: cadetblue;
 }
+.presetButton button {
+  border: 0;
+  font-size: 1vw;
+  font-weight: 700;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 0.3vw 0.01vw var(--border-tela);
+  user-select: none;
+}
+
+@media screen and (min-width: 1650px) {
+  #telaJogo {
+    width: 80vw;
+  }
+}
+@media screen and (min-width: 1980px) {
+  .telaPrincipal {
+    display: grid;
+  }
+  #telaJogo {
+    height: 30vw;
+    width: 90vw;
+  }
+  .sectionButtons {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .novaPalavra {
+    width: 7vw;
+    height: 5vw;
+    margin: 0 3vw;
+  }
+  .buttons {
+    margin: 2vw 0 0 0;
+  }
+} 
 @media screen and (max-width: 1024px) {
   body {
     padding: 1vh;
@@ -88,11 +104,9 @@ body {
   #telaJogo {
     width: 95vw;
   }
-  .sectionButtons {
-    margin: 10vw 0;
-  }
   .buttons {
     grid-template-columns: repeat(7, 1fr);
+    margin: 5vw 0;
     gap: 3vw;
   }
   .buttons button {
@@ -100,7 +114,7 @@ body {
     height: 9vw;
     font-size: 3vw;
   }
-  .optionsButton button {
+  .sectionButtons .novaPalavra {
     width: 30vw;
     height: 6.5vw;
     font-size: 3vw;
