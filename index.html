@@ -1,26 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jogo da forca</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="./src/Pinceis.js"></script>
-    <script src="./src/Sort.js"></script>
-  </head>
-  <body>
-    <main class="telaPrincipal">
-      <section class="sectionTela">
-        <canvas id="telaJogo" width="1000" height="400"></canvas>
-      </section>
-      <section class="sectionButtons presetButton">
-        <div id="buttonsLetras" class="buttons"></div>
-        <button class="novaPalavra" onclick="start()">NOVA PALAVRA</button>
-      </section>
-    </main>
-    <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da forca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="./src/Pinceis.js"></script>
+  <script src="./src/Sort.js"></script>
+</head>
+
+<body>
+  <main class="telaPrincipal">
+    <section class="sectionTela">
+      <canvas id="telaJogo" width="1000" height="400"></canvas>
+    </section>
+    <section class="sectionButtons presetButton">
+      <div id="buttonsLetras" class="buttons"></div>
+      <button class="novaPalavra" onclick="start()">NOVA PALAVRA</button>
+    </section>
+  </main>
+  <script>
+    const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZÇÃ";
+    function criarBotao(letra) {
+      const botao = document.createElement("button");
+      botao.value = letra;
+      botao.innerHTML = letra;
+      botao.id = `Letra_${letra}`;
+      return botao;
+    }
+    function criarBotoes() {
+      for (let i in letras) {
+        document
+          .querySelector("#buttonsLetras")
+          .appendChild(criarBotao(letras[i]));
+      }
+    }
+    criarBotoes()
+    function removerMarcacaoBotao() {
+      document
+        .querySelectorAll(".buttons>button")
+        .forEach((button) => button.classList.remove("press"));
+    }
+    document.querySelectorAll(".buttons>button").forEach((button) => {
+      button.onclick = function (click) {
+        //Codigo saida
+        button.classList.add("press");
+      };
+    });
+    document.onkeydown = function (click) {
+      const button = document.querySelector(`#Letra_${click.key.toUpperCase()}`);
+      if (button) {
+        button.classList.add("active");
+        button.click();
+      }
+    };
+    document.onkeyup = function (click) {
+      const button = document.querySelector(`#Letra_${click.key.toUpperCase()}`);
+      if (button) button.classList.remove("active");
+    };
+  </script>
+  <script src="main.js"></script>
+</body>
+
 </html>
