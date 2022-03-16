@@ -1,0 +1,46 @@
+@media screen and (min-width: 1650px) {
+    #telaJogo {
+      width: 80vw;
+    }
+  }
+  @media screen and (min-width: 1980px) {
+    .telaPrincipal {
+      display: grid;
+    }
+    #telaJogo {
+      height: 30vw;
+      width: 90vw;
+    }
+    .sectionButtons {
+      flex-direction: row;
+      justify-content: center;
+    }
+    .buttons {
+      margin: 2vw 0 0 0;
+    }
+    .novaPalavra {
+      margin: 1vw;
+      height: 2vw;
+      width: 10vw;
+    }
+  } 
+  @media screen and (max-width: 1024px) {
+    #telaJogo {
+      width: 95vw;
+    }
+    .buttons {
+      grid-template-columns: repeat(7, 1fr);
+      margin: 5vw 0;
+      gap: 3vw;
+    }
+    .buttons button {
+      width: 9vw;
+      height: 9vw;
+      font-size: 3vw;
+    }
+    .novaPalavra {
+      font-size: 1.2vh !important;
+      height: 7vw;
+      width: 25vw;
+    }
+  }

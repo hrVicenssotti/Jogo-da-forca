@@ -12,4 +12,15 @@ function criarBotoes() {
       .querySelector("#buttonsLetras")
       .appendChild(criarBotao(letra));
   }
+  document.onkeydown = function (click) {
+    const button = document.querySelector(`#Letra_${click.key.toUpperCase()}`)
+    if (button) {
+      button.classList.add("active")
+      button.click()
+    }
+  }
+  document.onkeyup = function (click) {
+    const button = document.querySelector(`#Letra_${click.key.toUpperCase()}`)
+    if (button) button.classList.remove("active")
+  }
 }

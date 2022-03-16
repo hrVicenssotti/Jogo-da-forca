@@ -65,86 +65,16 @@ body {
   box-shadow: 0px 0px 0.3vw 0.01vw var(--border-tela);
   user-select: none;
 }
-
-@media screen and (min-width: 1650px) {
-  #telaJogo {
-    width: 80vw;
-  }
-}
-@media screen and (min-width: 1980px) {
-  .telaPrincipal {
-    display: grid;
-  }
-  #telaJogo {
-    height: 30vw;
-    width: 90vw;
-  }
-  .sectionButtons {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .buttons {
-    margin: 2vw 0 0 0;
-  }
-} 
-@media screen and (max-width: 1024px) {
-  #telaJogo {
-    width: 95vw;
-  }
-  .buttons {
-    grid-template-columns: repeat(7, 1fr);
-    margin: 5vw 0;
-    gap: 3vw;
-  }
-  .buttons button {
-    width: 9vw;
-    height: 9vw;
-    font-size: 3vw;
-  }
-}
-
-.container {
-  top: 0;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(67 67 67 / 36%);
+.novaPalavra {
   display: none;
-  justify-content: center;
-  align-items: center;
 }
-.card {
-  width: 30vw;
-  height: 20vw;
-  border-radius: 1.5vw;
-  background-color: rgb(210 103 0);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  font-size: 2vw;
-}
-.card, .card li {
-  color: white;
-  list-style: none;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-}
-.card #gameOver {
-  font-size: 2.5vw;
-}
-.card button {
+.novaPalavra:hover {
   cursor: pointer;
-  border: none;
-  height: 4vw;
-  width: 10vw;
-  box-shadow: 0 0 0.3vw 0vw black;
-  background-color: rgb(118 94 0);
-  color: white;
-  font-size: 1.5vw;
-  font-weight: bold;
+  transition: 0.3s all ease;
+  transform: scale(1.1);
+  transform: translateY(-2px);
 }
-.card button:hover {
-  transform: scale(0.97);
+.novaPalavra:active {
+  transition: none;
+  background-color: rgb(170, 170, 170);
 }
