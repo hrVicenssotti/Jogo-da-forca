@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang='pt-br'>
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>Jogo da forca</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="./style/container.css">
-  <link rel="stylesheet" href="style/responsive.css">
-  <script src="./src/Buttons.js"></script>
-  <script src="./src/Pinceis.js"></script>
-  <script src="./src/Sort.js"></script>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap' rel='stylesheet'>
+  <link rel='stylesheet' href='style.css' />
+  <link rel='stylesheet' href='./style/container.css'>
+  <link rel='stylesheet' href='./style/responsive.css'>
+  <script src='./src/Buttons.js'></script>
+  <script src='./src/Pinceis.js'></script>
+  <script src='./src/Sort.js'></script>
+  <script src="./src/CalculoCenter.js"></script>
 </head>
+
 <body>
-  <main class="telaPrincipal">
-    <section class="sectionTela">
-      <canvas id="telaJogo" width="1000" height="400"></canvas>
+  <main class='telaPrincipal'>
+    <section class='sectionTela'>
+      <canvas id='telaJogo' width='1000' height='400'></canvas>
     </section>
-    <section class="sectionButtons presetButton">
-      <div id="buttonsLetras" class="buttons"></div>
-      <button class="novaPalavra" onclick="start()">NOVA PALAVRA</button>
+    <section class='sectionButtons presetButton'>
+      <div id='buttonsLetras' class='buttons'></div>
+      <button class='novaPalavra' onclick='start()'>NOVA PALAVRA</button>
     </section>
   </main>
-  <div class="container" id="screenGameOver">
-    <ul class="card">
-        <li id="gameOver">GAME OVER</li>
-        <button onclick="location.reload()">REINICIAR</button>
+  <div class='container' id='screenGameOver'>
+    <ul class='card'>
+      <li id='gameOver'>GAME OVER</li>
+      <button onclick='location.reload()'>REINICIAR</button>
     </ul>
   </div>
-  <script src="main.js"></script>
+  <script src='main.js'></script>
 </body>
+
 </html>

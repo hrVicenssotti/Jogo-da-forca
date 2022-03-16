@@ -1,12 +1,12 @@
-const canvas = document.querySelector("canvas");
-const ctx = canvas.getContext("2d");
-const screenGameOver = document.querySelector("#screenGameOver")
-const buttonNovaPalavra = document.querySelector(".novaPalavra")
+const canvas = document.querySelector('canvas')
+const ctx = canvas.getContext('2d')
+const screenGameOver = document.querySelector('#screenGameOver')
+const buttonNovaPalavra = document.querySelector('.novaPalavra')
 criarBotoes()
-document.querySelectorAll(".buttons>button").forEach((button) => {
+document.querySelectorAll('.buttons>button').forEach((button) => {
   button.onclick = function (click) {
     palavra.verificarLetra(click.target.value.toUpperCase())
-    button.classList.add("press")
+    button.classList.add('press')
   }
 })  
 const parteForca = [
@@ -14,12 +14,12 @@ const parteForca = [
   {x:20, y: 300, width: 90, heigth: 10, cor: 'black'}, {x:200, y: 50, width: 10, heigth: 20, cor: 'black'}
 ]
 const parteBoneco = [
-  { tipo: "circle", x: 205, y: 95, raio: 25, cor: 'black' }, 
-  { tipo: "line", xx: 205, xy: 120, yx: 205, yy: 210, cor: 'black', larguraLinha: 6 },
-  { tipo: "line", xx: 170, xy: 175, yx: 205, yy: 135, cor: 'black', larguraLinha: 6 },
-  { tipo: "line", xx: 243, xy: 175, yx: 205, yy: 135, cor: 'black', larguraLinha: 6 },
-  { tipo: "line", xx: 230, xy: 270, yx: 205, yy: 210, cor: 'black', larguraLinha: 6 },
-  { tipo: "line", xx: 180, xy: 270, yx: 205, yy: 210, cor: 'black', larguraLinha: 6 },
+  { tipo: 'circle', x: 205, y: 95, raio: 25, cor: 'black' }, 
+  { tipo: 'line', xx: 205, xy: 120, yx: 205, yy: 210, cor: 'black', larguraLinha: 6 },
+  { tipo: 'line', xx: 170, xy: 175, yx: 205, yy: 135, cor: 'black', larguraLinha: 6 },
+  { tipo: 'line', xx: 243, xy: 175, yx: 205, yy: 135, cor: 'black', larguraLinha: 6 },
+  { tipo: 'line', xx: 230, xy: 270, yx: 205, yy: 210, cor: 'black', larguraLinha: 6 },
+  { tipo: 'line', xx: 180, xy: 270, yx: 205, yy: 210, cor: 'black', larguraLinha: 6 },
 ]
 let boneco
 let palavra
@@ -71,13 +71,13 @@ class Palavra {
     this.loadLines()
   } 
   loadLines() {
-    let x = calcularCentro(this.#palavra.length * 60);
+    let x = calcularCentro(this.#palavra.length * 60)
     for (let letraI of this.#palavra) {
-      const linha = new DrawRect(ctx, x, 370, 40, 5, "black");
+      const linha = new DrawRect(ctx, x, 370, 40, 5, 'black')
       const letra = new DrawText(ctx, x + 40 / 2, 369.4, letraI, 'darkred', 'center', '50px', 'bold')
       this.#letras.push(letra)
       linha.draw()
-      x += 60;
+      x += 60
     }
     const tipo = new DrawText(ctx, 500, 70, this.tipo, 'darkred', 'center', '30px', 'bold')
     tipo.draw()
@@ -101,8 +101,8 @@ class Palavra {
   }
   verificarLetra(letraSelecionada) {
     const contemLetra = this.#verificarLetraIn(letraSelecionada)
+    let diferente = 0
     if (this.#andamento && contemLetra) {
-      let diferente = 0;
       [...this.#palavra].forEach((letra, indice) => {
         if (letraSelecionada === letra) { 
           this.#letras[indice].draw()

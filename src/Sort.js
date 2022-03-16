@@ -38,7 +38,7 @@ const palavras = [
   {palavra: 'Sapo', tipo: 'Animal'},
   {palavra: 'Jacare', tipo: 'Animal'},
   {palavra: 'Macaco', tipo: 'Animal'}
-];
+]
 function sorteio() {
     const indiceSorteado = Math.floor(Math.random() * palavras.length)
     return palavras[indiceSorteado]

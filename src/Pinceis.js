@@ -9,12 +9,12 @@ class DrawText {
     this.font = `${espessura} ${fontSize} Verdana`
   }
   draw() {
-    this.ctx.beginPath();
-    this.ctx.textAlign = this.align;
-    this.ctx.font = this.font;
-    this.ctx.fillStyle = this.cor;
-    this.ctx.fillText(this.texto, this.x, this.y);
-    this.ctx.fill();
+    this.ctx.beginPath()
+    this.ctx.textAlign = this.align
+    this.ctx.font = this.font
+    this.ctx.fillStyle = this.cor
+    this.ctx.fillText(this.texto, this.x, this.y)
+    this.ctx.fill()
   }
 }
 class DrawRect {
