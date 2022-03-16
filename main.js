@@ -118,10 +118,6 @@ class Palavra {
     }
   }
 }
-function calcularCentro(largura) {
-  const widthTela = canvas.width / 2;
-  return widthTela - largura / 2;
-}
 function start() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   parteForca.forEach((parte) => {
